@@ -1,0 +1,138 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ======== BARRA DE NAVEGACIÓN ======== */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+}
+
+/* ======== SECCIÓN HERO ======== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 5%;
+    background-color: #fff;
+    margin-top: 60px; /* Para compensar la barra de navegación fija */
+}
+
+.hero-texto {
+    max-width: 50%;
+}
+
+.hero-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-imagen img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ddd;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======== ESTILOS DE SECCIONES GENERALES ======== */
+section {
+    padding: 60px 5%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/* ======== SECCIÓN PORTAFOLIO ======== */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.proyecto-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.proyecto-card h3 {
+    margin-top: 0;
+}
+
+.boton-proyecto {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px 5px 5px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+
+/* ======== FOOTER ======== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
