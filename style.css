@@ -1,10 +1,10 @@
-/* ======== PALETA DE COLORES PROFESIONAL ======== */
+/* ======== NUEVA PALETA DE COLORES PROFESIONAL ======== */
 :root {
-    --color-primario: #2c3e50; /* Azul oscuro/casi negro */
-    --color-secundario: #3498db; /* Azul brillante para acentos */
-    --color-fondo: #ecf0f1; /* Gris muy claro */
-    --color-texto: #34495e; /* Gris oscuro para texto */
-    --color-blanco: #ffffff;
+    --color-fondo-oscuro: #0f2027; /* Azul-verde muy oscuro del fondo */
+    --color-fondo-tarjeta: #203A43; /* Teal oscuro para las tarjetas */
+    --color-acento: #c2e253; /* Verde lima de acento */
+    --color-texto: #EFEFEF; /* Texto casi blanco para contraste */
+    --color-texto-secundario: #a0a0a0; /* Gris claro para texto menos importante */
 }
 
 /* ======== ESTILOS GENERALES ======== */
@@ -13,23 +13,23 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--color-fondo);
+    background-color: var(--color-fondo-oscuro);
     color: var(--color-texto);
     line-height: 1.6;
 }
 
 /* ======== BARRA DE NAVEGACIÓN ======== */
 header {
-    background-color: var(--color-blanco);
-    color: var(--color-texto);
+    background-color: rgba(32, 58, 67, 0.8); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo (muy moderno) */
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #2a4a55;
 }
-
+/* ... (El resto del CSS de la navegación se mantiene similar, adaptado a los nuevos colores) ... */
 nav {
     width: 90%;
     margin: 0 auto;
@@ -41,26 +41,26 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primario);
+    color: var(--color-acento);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--color-primario);
+    color: var(--color-texto);
     font-weight: 700;
-    transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--color-secundario);
+    color: var(--color-acento);
 }
 
 /* ======== SECCIÓN HERO ======== */
@@ -68,11 +68,12 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 120px 5% 60px 5%; /* Más espacio arriba */
-    background-color: var(--color-blanco);
-    margin-top: 60px; 
+    padding: 120px 5% 80px 5%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Gradiente sutil */
+    margin-top: 60px;
+    border-bottom: 1px solid #2a4a55;
 }
-
+/* ... (El resto del CSS de Hero se mantiene similar) ... */
 .hero-texto {
     max-width: 50%;
 }
@@ -80,12 +81,13 @@ nav ul li a:hover {
 .hero-texto h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--color-primario);
+    color: var(--color-texto);
 }
 
 .hero-texto p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: var(--color-texto-secundario);
 }
 
 .hero-imagen img {
@@ -93,95 +95,99 @@ nav ul li a:hover {
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--color-secundario);
+    border: 5px solid var(--color-acento);
 }
 
 .boton {
     display: inline-block;
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
+    background-color: var(--color-acento);
+    color: var(--color-fondo-oscuro);
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .boton:hover {
-    background-color: #2980b9; /* Un azul un poco más oscuro */
+    transform: scale(1.05);
 }
 
 /* ======== ESTILOS DE SECCIONES GENERALES ======== */
 section {
-    padding: 60px 5%;
+    padding: 80px 5%;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-size: 2.5rem;
-    color: var(--color-primario);
+    color: var(--color-texto);
 }
 
 /* ======== SECCIÓN PORTAFOLIO ======== */
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .proyecto-card {
-    background-color: var(--color-blanco);
+    background-color: var(--color-fondo-tarjeta);
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #2a4a55;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Para la animación de entrada */
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .proyecto-card:hover {
-    transform: translateY(-5px); /* Efecto de levantar la tarjeta */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .proyecto-card h3 {
     margin-top: 0;
-    color: var(--color-primario);
+    color: var(--color-acento);
 }
 
 .boton-proyecto {
     display: inline-block;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+    background-color: var(--color-texto-secundario);
+    color: var(--color-fondo-oscuro);
     padding: 8px 15px;
-    margin: 5px 5px 5px 0;
+    margin: 10px 5px 5px 0;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .boton-proyecto:hover {
-    background-color: var(--color-secundario);
+    background-color: var(--color-acento);
 }
+
+.section-summary-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
 
 /* ======== FOOTER ======== */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+    background-color: #0c1a20;
+    border-top: 1px solid #2a4a55;
 }
 
-
-/*
-==============================================
-DISEÑO RESPONSIVO (PARA CELULARES Y TABLETAS)
-==============================================
-*/
+/* ======== DISEÑO RESPONSIVO ======== */
 @media (max-width: 768px) {
-    /* Ajustamos el Hero para que se vea bien en vertical */
     .hero {
-        flex-direction: column; /* Apila el texto sobre la imagen */
+        flex-direction: column;
         text-align: center;
         padding-top: 80px;
     }
@@ -195,7 +201,6 @@ DISEÑO RESPONSIVO (PARA CELULARES Y TABLETAS)
         font-size: 2.5rem;
     }
 
-    /* Ocultamos el menú de navegación para simplificar (luego podemos hacer un menú de hamburguesa) */
     nav ul {
         display: none; 
     }
