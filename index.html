@@ -3,60 +3,650 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abraham Said Figueroa Zúñiga - Portafolio</title>
+    <title>Portafolio GIS - Experto en Sistemas de Información Geográfica</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">ASFZ</div>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="portfolio.html">Portafolio</a></li>
-                <li><a href="geoportal.html">Geoportal</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe"></i>
+                <span>GIS Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="home">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-page="blog">Blog</a></li>
+                <li><a href="#" class="nav-link" data-page="portfolio">Portafolio</a></li>
+                <li><a href="#" class="nav-link" data-page="geoportal">Geoportal</a></li>
+                <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-texto">
-                <h1 class="anim-titulo">Abraham Said Figueroa Zúñiga</h1>
-                <p class="anim-subtitulo">Especialista en Planeación Urbana, Web SIG, Drones y Análisis de Datos.</p>
-                <a href="portfolio.html" class="boton anim-boton">Ver mis Proyectos</a>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <div class="hero-imagen">
-                <img src="images/foto_profesional.jpg" alt="Foto de Abraham Said Figueroa Zúñiga">
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="home-page" class="page-content active">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Experto en Sistemas de Información Geográfica</h1>
+                    <h2 class="hero-subtitle">Desarrollador GIS • Científico de Datos • Especialista UX/UI</h2>
+                    <p class="hero-description">Creando soluciones innovadoras que integran análisis geoespacial, visualización de datos y experiencias de usuario excepcionales.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn--primary" data-page="geoportal">Ver Geoportal</button>
+                        <button class="btn btn--outline" data-page="portfolio">Ver Portafolio</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <!-- Profile Image -->
+                        <div class="profile-image">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1758174142/pplx_project_search_images/493c0c1fdcfb398c46841b9341ad4cc66328ac61.png" alt="Perfil GIS" />
+                        </div>
+                        <!-- Animated Elements -->
+                        <div class="profile-rings">
+                            <div class="ring ring-outer"></div>
+                            <div class="ring ring-middle"></div>
+                            <div class="ring ring-inner"></div>
+                        </div>
+                        <div class="orbital-particles"></div>
+                        <div class="floating-icons">
+                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-code"></i>
+                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-map"></i>
+                            <i class="fas fa-database"></i>
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="sobre-mi">
-            <h2>Sobre Mí</h2>
-            <p>...</p> </section>
-
-        <section id="portafolio">
-            <h2>Proyectos Destacados</h2>
-            <div class="proyectos-grid">
-                <div class="proyecto-card">...</div>
-                <div class="proyecto-card">...</div>
-                <div class="proyecto-card">...</div>
-            </div>
-            <div class="section-summary-link">
-                <a href="portfolio.html" class="boton">Ver todos los proyectos</a>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Acerca de Mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Especialista en Sistemas de Información Geográfica con más de 8 años de experiencia en el desarrollo de soluciones geoespaciales innovadoras. Mi expertise combina tecnologías GIS avanzadas, ciencia de datos y diseño UX/UI para crear experiencias digitales excepcionales.</p>
+                        <p>He liderado proyectos de gran escala en monitoreo ambiental, planificación urbana y análisis espacial, siempre enfocado en transformar datos complejos en insights accionables a través de visualizaciones intuitivas.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Tecnologías GIS</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">ArcGIS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">QGIS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PostGIS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Desarrollo Web</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Ciencia de Datos</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Machine Learning</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Data Visualization</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        
-        </main>
 
-    <footer id="contacto"> <p>&copy; 2024 Abraham Said Figueroa Zúñiga. Todos los derechos reservados.</p>
+        <!-- Featured Portfolio -->
+        <section id="portfolio-preview" class="portfolio-preview">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <h3>Geoportal de Monitoreo Ambiental</h3>
+                            <p>Sistema web para el monitoreo en tiempo real de indicadores ambientales con dashboards interactivos.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">ArcGIS API</span>
+                                <span class="tech-tag">PostGIS</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <h3>Dashboard de Análisis Urbano</h3>
+                            <p>Herramienta de análisis para planificación urbana con visualizaciones 3D y métricas avanzadas.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">QGIS</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-content">
+                            <h3>Aplicación Móvil de Campo</h3>
+                            <p>App móvil para recolección de datos geoespaciales con sincronización offline.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Cordova</span>
+                                <span class="tech-tag">Leaflet</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn--outline" data-page="portfolio">Ver más proyectos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Servicios Especializados</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Desarrollo de Geoportales</h3>
+                        <p>Creación de portales web especializados para la visualización y análisis de datos geoespaciales con interfaces intuitivas y funcionalidades avanzadas.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Análisis Espacial Avanzado</h3>
+                        <p>Análisis profundo de datos geográficos utilizando técnicas estadísticas y algoritmos de machine learning para insights accionables.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Consultoría en UX/UI para GIS</h3>
+                        <p>Optimización de interfaces de usuario para aplicaciones GIS, enfocándose en usabilidad y experiencia del usuario final.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>¿Tienes un proyecto en mente?</h3>
+                        <p>Estoy disponible para colaborar en proyectos innovadores que requieran expertise en GIS, análisis de datos y desarrollo web.</p>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>contacto@gisportfolio.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+52 555 123 4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ciudad de México, México</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Asunto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="blog-page" class="page-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Blog GIS & Tecnología</h1>
+                <p class="page-subtitle">Artículos sobre sistemas de información geográfica, desarrollo web y ciencia de datos</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="GIS">GIS</button>
+                    <button class="filter-btn" data-category="UX/UI">UX/UI</button>
+                    <button class="filter-btn" data-category="Ciencia de Datos">Ciencia de Datos</button>
+                    <button class="filter-btn" data-category="Desarrollo Web">Desarrollo Web</button>
+                </div>
+
+                <div class="blog-search">
+                    <input type="text" class="form-control" placeholder="Buscar artículos..." id="blog-search">
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="GIS">
+                        <div class="blog-image">
+                            <div class="blog-category">GIS</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Tendencias en Visualización de Datos Geoespaciales 2025</h3>
+                            <p>Explorando las últimas innovaciones en visualización de datos espaciales, desde realidad aumentada hasta dashboards interactivos.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">15 Sep 2025</span>
+                                <span class="blog-read-time">8 min lectura</span>
+                            </div>
+                            <button class="blog-read-more" data-post="1">Leer más</button>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="UX/UI">
+                        <div class="blog-image">
+                            <div class="blog-category">UX/UI</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Mejores Prácticas de UX/UI en Aplicaciones GIS</h3>
+                            <p>Guía completa sobre cómo diseñar interfaces de usuario intuitivas para aplicaciones de sistemas de información geográfica.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">10 Sep 2025</span>
+                                <span class="blog-read-time">12 min lectura</span>
+                            </div>
+                            <button class="blog-read-more" data-post="2">Leer más</button>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="Ciencia de Datos">
+                        <div class="blog-image">
+                            <div class="blog-category">Ciencia de Datos</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Integración de IA en Análisis Espacial</h3>
+                            <p>Cómo la inteligencia artificial está revolucionando el análisis de datos geoespaciales y la automatización de procesos GIS.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">5 Sep 2025</span>
+                                <span class="blog-read-time">10 min lectura</span>
+                            </div>
+                            <button class="blog-read-more" data-post="3">Leer más</button>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="Desarrollo Web">
+                        <div class="blog-image">
+                            <div class="blog-category">Desarrollo Web</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Desarrollo de Geoportales con Tecnologías Modernas</h3>
+                            <p>Tutorial paso a paso para crear geoportales escalables usando React, Node.js y tecnologías de mapas abiertas.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">28 Ago 2025</span>
+                                <span class="blog-read-time">15 min lectura</span>
+                            </div>
+                            <button class="blog-read-more" data-post="4">Leer más</button>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="Ciencia de Datos">
+                        <div class="blog-image">
+                            <div class="blog-category">Ciencia de Datos</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Python para Análisis Geoespacial Avanzado</h3>
+                            <p>Herramientas y bibliotecas de Python esenciales para el análisis espacial: GeoPandas, Shapely, Rasterio y más.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">20 Ago 2025</span>
+                                <span class="blog-read-time">14 min lectura</span>
+                            </div>
+                            <button class="blog-read-more" data-post="5">Leer más</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Portfolio Page -->
+    <div id="portfolio-page" class="page-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Portafolio de Proyectos</h1>
+                <p class="page-subtitle">Casos de estudio detallados de mis proyectos más destacados</p>
+            </div>
+        </section>
+
+        <section class="portfolio-detailed">
+            <div class="container">
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="GIS">GIS</button>
+                    <button class="filter-btn" data-filter="Data Science">Data Science</button>
+                </div>
+
+                <div class="portfolio-detailed-grid">
+                    <div class="project-case-study" data-category="GIS">
+                        <div class="case-study-header">
+                            <h2>Geoportal de Monitoreo Ambiental</h2>
+                            <p class="project-subtitle">Sistema web para monitoreo en tiempo real de indicadores ambientales</p>
+                        </div>
+                        
+                        <div class="case-study-content">
+                            <div class="project-overview">
+                                <h3>Descripción del Proyecto</h3>
+                                <p>Desarrollo completo de un geoportal para el monitoreo ambiental que integra datos de múltiples fuentes, incluyendo estaciones meteorológicas, sensores de calidad del aire y datos satelitales. El sistema permite visualización en tiempo real, alertas automáticas y generación de reportes.</p>
+                            </div>
+
+                            <div class="project-tech">
+                                <h3>Tecnologías Utilizadas</h3>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">ArcGIS API</span>
+                                    <span class="tech-tag">PostGIS</span>
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">D3.js</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Docker</span>
+                                </div>
+                            </div>
+
+                            <div class="project-challenges">
+                                <h3>Desafíos Técnicos</h3>
+                                <ul>
+                                    <li>Integración de múltiples fuentes de datos heterogéneas</li>
+                                    <li>Procesamiento en tiempo real de grandes volúmenes de datos</li>
+                                    <li>Optimización de consultas espaciales complejas</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-results">
+                                <h3>Resultados Obtenidos</h3>
+                                <ul>
+                                    <li>Reducción del 40% en tiempo de respuesta a emergencias ambientales</li>
+                                    <li>Integración exitosa de 15 fuentes de datos diferentes</li>
+                                    <li>Interfaz utilizada por más de 200 técnicos ambientales</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-links">
+                                <button class="btn btn--primary">Ver Demo</button>
+                                <button class="btn btn--outline">Ver Código</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-case-study" data-category="Data Science">
+                        <div class="case-study-header">
+                            <h2>Dashboard de Análisis Urbano</h2>
+                            <p class="project-subtitle">Herramienta de análisis para planificación urbana con visualizaciones 3D</p>
+                        </div>
+                        
+                        <div class="case-study-content">
+                            <div class="project-overview">
+                                <h3>Descripción del Proyecto</h3>
+                                <p>Sistema avanzado de análisis urbano que combina datos demográficos, económicos y de infraestructura para apoyar la toma de decisiones en planificación urbana. Incluye modelado 3D, análisis de accesibilidad y simulaciones de crecimiento poblacional.</p>
+                            </div>
+
+                            <div class="project-tech">
+                                <h3>Tecnologías Utilizadas</h3>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Three.js</span>
+                                    <span class="tech-tag">QGIS</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">FastAPI</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                </div>
+                            </div>
+
+                            <div class="project-challenges">
+                                <h3>Desafíos Técnicos</h3>
+                                <ul>
+                                    <li>Renderizado eficiente de modelos 3D complejos</li>
+                                    <li>Algoritmos de optimización para análisis de accesibilidad</li>
+                                    <li>Integración de múltiples modelos predictivos</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-results">
+                                <h3>Resultados Obtenidos</h3>
+                                <ul>
+                                    <li>Mejora del 60% en precisión de predicciones urbanas</li>
+                                    <li>Reducción del 30% en tiempo de análisis de planificación</li>
+                                    <li>Adoptado por 3 municipios como herramienta oficial</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-links">
+                                <button class="btn btn--primary">Ver Demo</button>
+                                <button class="btn btn--outline">Ver Código</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Geoportal Page -->
+    <div id="geoportal-page" class="page-content">
+        <section class="geoportal-full">
+            <div class="geoportal-header">
+                <div class="container">
+                    <h1>Geoportal Interactivo</h1>
+                    <p>Plataforma avanzada de análisis geoespacial y visualización de datos</p>
+                </div>
+            </div>
+
+            <div class="geoportal-layout">
+                <!-- Left Sidebar -->
+                <div class="sidebar sidebar-left">
+                    <div class="sidebar-content">
+                        <h3>Capas de Datos</h3>
+                        <div class="layer-controls">
+                            <div class="layer-item">
+                                <label class="layer-label">
+                                    <input type="checkbox" class="layer-toggle" data-layer="population" checked>
+                                    <span class="checkmark"></span>
+                                    Densidad Poblacional
+                                </label>
+                                <div class="opacity-control">
+                                    <input type="range" class="opacity-slider" data-layer="population" min="0" max="100" value="70">
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <label class="layer-label">
+                                    <input type="checkbox" class="layer-toggle" data-layer="infrastructure">
+                                    <span class="checkmark"></span>
+                                    Infraestructura de Transporte
+                                </label>
+                                <div class="opacity-control">
+                                    <input type="range" class="opacity-slider" data-layer="infrastructure" min="0" max="100" value="100">
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <label class="layer-label">
+                                    <input type="checkbox" class="layer-toggle" data-layer="environmental">
+                                    <span class="checkmark"></span>
+                                    Calidad Ambiental
+                                </label>
+                                <div class="opacity-control">
+                                    <input type="range" class="opacity-slider" data-layer="environmental" min="0" max="100" value="80">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Herramientas de Análisis</h3>
+                        <div class="analysis-tools">
+                            <button class="tool-btn"><i class="fas fa-search-location"></i> Buffer Analysis</button>
+                            <button class="tool-btn"><i class="fas fa-layer-group"></i> Overlay Operations</button>
+                            <button class="tool-btn"><i class="fas fa-chart-bar"></i> Spatial Statistics</button>
+                            <button class="tool-btn"><i class="fas fa-route"></i> Network Analysis</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Container -->
+                <div class="map-container">
+                    <div id="geoportal-map"></div>
+                    <div class="map-controls">
+                        <button class="map-btn" id="fullscreen-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <div class="basemap-selector">
+                            <select id="basemap-select">
+                                <option value="osm">OpenStreetMap</option>
+                                <option value="satellite">Satelital</option>
+                                <option value="terrain">Terreno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="sidebar sidebar-right">
+                    <div class="sidebar-content">
+                        <h3>Estadísticas</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">2,847,691</span>
+                                    <span class="stat-label">Total Población</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-map"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">1,247 km²</span>
+                                    <span class="stat-label">Área Total</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">2,284 hab/km²</span>
+                                    <span class="stat-label">Densidad</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Visualizaciones</h3>
+                        <div class="chart-container" style="position: relative; height: 200px;">
+                            <canvas id="populationChart"></canvas>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 200px;">
+                            <canvas id="temporalChart"></canvas>
+                        </div>
+
+                        <h3>Exportar Datos</h3>
+                        <div class="export-tools">
+                            <button class="export-btn"><i class="fas fa-file-csv"></i> CSV</button>
+                            <button class="export-btn"><i class="fas fa-file-code"></i> GeoJSON</button>
+                            <button class="export-btn"><i class="fas fa-file-pdf"></i> PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Post Modal -->
+    <div class="modal hidden" id="blog-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 GIS Portfolio. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
